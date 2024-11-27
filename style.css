@@ -1,0 +1,56 @@
+body {
+    min-height: 100vh;
+    background: linear-gradient(
+        to bottom, #40cfe0, #174583
+    ) no-repeat;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.zoom {
+    width: max-content;
+    position: relative;
+
+    img {
+        width: 350px;
+    }
+    #imgZoom {
+        position: absolute;
+        top: 0;
+        left: 0;
+        --zoom-x: 50%;
+        --zoom-y: 50%;
+        transform: scale(1.5);
+        pointer-event: none;
+        clip-path: circle(
+            100px  at var(--zoom-x) var(--zoom-y)
+        );
+        opacity: 0;
+    }
+}
+
+
+figure {
+    display: flex;
+    align-items: center;
+
+    svg {
+        fill: #40afe0;
+    }
+    figcaption a {
+      color: #40cfe0;
+      text-decoration: none;
+      margin-left: .5rem;
+      font-size: 1.2rem;
+  
+      &:hover {
+        text-decoration: underline;
+      }
+      &:active {
+        font-size: 1rem;
+      }
+    }
+  }
